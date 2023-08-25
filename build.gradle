@@ -1,9 +1,10 @@
 plugins {
     id 'java'
+    id 'application'
 }
 
 group = 'org.rozfix'
-version = '1.0-SNAPSHOT'
+version = '1.0'
 
 repositories {
     mavenCentral()
@@ -12,8 +13,21 @@ repositories {
 dependencies {
     testImplementation platform('org.junit:junit-bom:5.9.1')
     testImplementation 'org.junit.jupiter:junit-jupiter'
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor 'org.projectlombok:lombok:1.18.26'
+    implementation 'org.postgresql:postgresql:42.6.0'
+    implementation 'org.yaml:snakeyaml:1.28'
 }
 
 test {
     useJUnitPlatform()
+}
+
+jar {
+    archiveBaseName = 'clever-bank'
+    version = null
+    manifest {
+        attributes 'Main-Class': 'org.rozfix.cleverbank.App'
+    }
+    from configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) }
 }

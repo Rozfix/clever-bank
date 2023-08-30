@@ -1,6 +1,7 @@
 package org.rozfix.cleverbank.model;
 
 import lombok.Data;
+import org.rozfix.cleverbank.util.generator.IdGenerator;
 
 import java.time.LocalDateTime;
 
@@ -12,9 +13,9 @@ public class Transaction {
     private Account recipientAccount;
     private double amount;
 
-    public Transaction(String transactionId, LocalDateTime timestamp, Account sender, Account recipient, double amount) {
-        this.transactionId = transactionId;
-        this.timestamp  = timestamp;
+    public Transaction(Account sender, Account recipient, double amount) {
+        this.transactionId = IdGenerator.generateId();
+        this.timestamp  = LocalDateTime.now();
         this.senderAccount  = sender;
         this.recipientAccount  = recipient;
         this.amount  = amount;

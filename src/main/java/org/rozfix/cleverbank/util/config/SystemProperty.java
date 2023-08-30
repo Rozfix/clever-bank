@@ -1,7 +1,7 @@
 package org.rozfix.cleverbank.util.config;
 
 public enum SystemProperty {
-    URL("jdbc:postgresql://localhost:5432/northwind"),
+    URL("jdbc:postgresql://localhost:5432/clever-bank"),
     USERNAME("postgres"),
     PASSWORD("1111");
 

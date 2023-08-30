@@ -1,4 +1,4 @@
-package org.rozfix.cleverbank.util;
+package org.rozfix.cleverbank.util.generator;
 
 import java.util.UUID;
 

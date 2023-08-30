@@ -1,4 +1,4 @@
 package org.rozfix.cleverbank.service;
-public class TransactionService {
 
+public class AccountService {
 }

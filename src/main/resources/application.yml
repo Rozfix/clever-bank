@@ -1,4 +1,4 @@
 dbProperties:
   username: "postgres"
   password: "32562330"
-  url: "jdbc:postgresql://localhost:5432/northwind"
+  url: "jdbc:postgresql://localhost:5432/clever-bank"
